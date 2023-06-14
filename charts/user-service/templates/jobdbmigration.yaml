@@ -1,3 +1,4 @@
+{{- $image := .Values.image | default dict -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
