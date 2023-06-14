@@ -1,0 +1,10 @@
+{{- if (include "auth-service.createConfigMap" .) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name:  {{ include "auth-service.fullname" . }}
+data:
+    IdentityServer__ClientId: "otus_client"
+    IdentityServer__ClientSecret: "999d4ea0-164f-4c1b-8585-b83f313995c9"
+    UserService__ServiceUrl: "user-service"
+ {{- end }}

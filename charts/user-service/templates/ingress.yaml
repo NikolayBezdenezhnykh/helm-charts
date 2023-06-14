@@ -1,0 +1,27 @@
+{{- $ingress := .Values.ingress | default dict -}}
+{{- $service := .Values.service | default dict -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "user-service.fullname" . }}
+  {{- if $ingress.useAnnotations }}
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: {{ $ingress.annotations.useRegex }}
+    nginx.ingress.kubernetes.io/rewrite-target: {{ $ingress.annotations.rewriteTarget }}
+  {{- end }}
+spec:
+  ingressClassName: {{ $ingress.ingressClassName | quote }}
+  rules:
+    - host: {{ $ingress.hostname }}
+      http:
+        paths:
+          {{- if $ingress.extraPaths }}
+          {{- toYaml $ingress.extraPaths | nindent 10 }}
+          {{- end }}
+          - path : {{ $ingress.path }}
+            pathType: {{ $ingress.pathType }}
+            backend:
+              service:
+                name: {{ include "user-service.fullname" . }}
+                port:
+                  number: {{ $service.port }}

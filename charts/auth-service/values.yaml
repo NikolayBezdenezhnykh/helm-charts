@@ -1,0 +1,53 @@
+replicaCount: 1
+
+image:
+  repository: nikolaybezdenezhnykh/auth-service
+  pullPolicy: IfNotPresent
+  tag: "0.1"
+
+nameOverride: ""
+fullnameOverride: ""
+
+existingSecret: ""
+existingConfigMap: ""
+
+containerPort: 80
+
+updateStrategy:
+  type: RollingUpdate
+
+livenessProbe:
+  enabled: false
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  failureThreshold: 2
+  path: /health
+
+readinessProbe:
+  enabled: false
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  path: /health
+
+service:
+  type: ClusterIP
+  port: 80
+  protocol: TCP
+  name: api
+
+metrics:
+  enabled: false
+
+ingress:
+  ingressClassName: nginx
+  hostname: arch.homework
+  extraPaths: []
+  path: /auth(/|$)(.*)
+  pathType: Prefix
+  useAnnotations: true
+  annotations: 
+    useRegex: true
+    rewriteTarget: /api/v1.0/auth/$2
+    
+  
+  
