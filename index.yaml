@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  auth-service:
+  - apiVersion: v1
+    appVersion: "0.1"
+    created: "2023-06-14T17:20:51.8687759+03:00"
+    description: A Helm chart of auth-service for Kubernetes
+    digest: dc1af828b8afd65b2da95679bd1fd3e80ebdb61772c5aea28e2aac8fbbce5bb1
+    name: auth-service
+    type: application
+    urls:
+    - https://github.com/NikolayBezdenezhnykh/helm-charts/releases/download/auth-service-0.1.0/auth-service-0.1.0.tgz
+    version: 0.1.0
+  user-service:
+  - apiVersion: v1
+    appVersion: "0.2"
+    created: "2023-06-14T17:20:52.1053221+03:00"
+    description: A Helm chart of user-service for Kubernetes
+    digest: 435abe00479726d61940d73acdfda552ef07dd5f2f3e55556d842fd0bc058e80
+    name: user-service
+    type: application
+    urls:
+    - https://github.com/NikolayBezdenezhnykh/helm-charts/releases/download/user-service-0.1.0/user-service-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-06-14T17:20:52.1053221+03:00"
