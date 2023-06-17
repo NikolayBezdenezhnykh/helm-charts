@@ -6,5 +6,6 @@ metadata:
 data:
     IdentityServer__ClientId: "otus_client"
     IdentityServer__ClientSecret: "999d4ea0-164f-4c1b-8585-b83f313995c9"
+    IdentityServer__Issuer: "http://auth-service"
     UserService__ServiceUrl: "http://user-service"
  {{- end }}

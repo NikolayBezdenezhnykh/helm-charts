@@ -22,3 +22,10 @@ spec:
                 name: auth-service
                 port:
                   number: 80
+          - path : /.well-known/jwks
+            pathType: Prefix
+            backend:
+              service:
+                name: auth-service
+                port:
+                  number: 80
