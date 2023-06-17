@@ -21,4 +21,4 @@ spec:
         args: ["Api.dll", "update"]
         envFrom:
           - secretRef:
-              name: {{ include "auth-service.secretName" . }}
+              name: auth-service-secret-db-migration
