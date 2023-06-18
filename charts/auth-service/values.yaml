@@ -39,15 +39,12 @@ metrics:
   enabled: false
 
 ingress:
+  enabled: false
   ingressClassName: nginx
   hostname: arch.homework
   extraPaths: []
-  path: /auth(/|$)(.*)
+  path: /api/v1.0/auth/
   pathType: Prefix
-  useAnnotations: true
-  annotations: 
-    useRegex: true
-    rewriteTarget: /api/v1.0/auth/$2
     
   
   

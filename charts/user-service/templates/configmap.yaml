@@ -4,6 +4,6 @@ kind: ConfigMap
 metadata:
     name:  {{ include "user-service.fullname" . }}
 data:
-    IdentityServerClient__Authority: "auth-service"
+    IdentityServerClient__Authority: "http://auth-service"
     IdentityServerClient__Audience: "otus"
  {{- end }}
