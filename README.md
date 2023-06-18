@@ -2,7 +2,7 @@
 
 1. Установка Postgresql
 
-helm install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql --set primary.initdb.scripts."init\.sql"="CREATE USER authservice WITH LOGIN CREATEDB PASSWORD 'password';CREATE USER userservice WITH LOGIN CREATEDB PASSWORD 'password';"
+helm install postgresql oci://registry-1.docker.io/bitnamicharts/postgresql --set primary.initdb.scripts."init\\.sql"="CREATE USER authservice WITH LOGIN CREATEDB PASSWORD 'password';CREATE USER userservice WITH LOGIN CREATEDB PASSWORD 'password';"
 
 2. Установка nginx-ingress
 
@@ -30,11 +30,11 @@ kubectl delete ingress/ingress-route
 
 helm delete auth-service && helm delete user-service && helm repo remove nikolaybezdenezhnykh-repo
 
-3. Удаление Postgresql (вместе с репозиторием)
+3. Удаление Postgresql
 
-helm delete postgresql && helm repo remove runix
+helm delete postgresql && kubectl delete pvc -l app.kubernetes.io/name=postgresql
 
-4. Удаление nginx-ingress (вместе с репозиторием)
+4. Удаление nginx-ingress
 
-helm delete nginx-ingress && helm repo remove ingress-nginx
+helm delete nginx-ingress
 
