@@ -16,6 +16,10 @@ helm repo add nikolaybezdenezhnykh-repo https://nikolaybezdenezhnykh.github.io/h
 
 kubectl apply -f ./charts/ingress.yaml
 
+## Схема взаимодействия сервисов
+
+Представлена на картинке ./charts/Apigateway.png
+
 # Инструкция по удалению.
 
 1. Удаление ingress-route
