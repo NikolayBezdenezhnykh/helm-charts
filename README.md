@@ -14,7 +14,7 @@ helm repo add nikolaybezdenezhnykh-repo https://nikolaybezdenezhnykh.github.io/h
 
 4. Установка ingress-route
 
-kubectl apply -f ingress.yaml
+kubectl apply -f ./charts/ingress.yaml
 
 # Инструкция по удалению.
 
