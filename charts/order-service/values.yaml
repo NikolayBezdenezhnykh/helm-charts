@@ -17,14 +17,14 @@ updateStrategy:
   type: RollingUpdate
 
 livenessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 10
   periodSeconds: 5
   failureThreshold: 2
   path: /health
 
 readinessProbe:
-  enabled: true
+  enabled: false
   initialDelaySeconds: 10
   periodSeconds: 5
   path: /health
