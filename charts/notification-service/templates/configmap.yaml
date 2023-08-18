@@ -1,8 +1,8 @@
-{{- if (include "user-service.createConfigMap" .) }}
+{{- if (include "notification-service.createConfigMap" .) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-    name:  {{ include "user-service.fullname" . }}
+    name:  {{ include "notification-service.fullname" . }}
 data:
     IdentityServerClient__Authority: "http://auth-service"
     IdentityServerClient__Audience: "otus"

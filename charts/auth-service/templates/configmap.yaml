@@ -7,5 +7,5 @@ data:
     IdentityServer__ClientId: "otus_client"
     IdentityServer__ClientSecret: "999d4ea0-164f-4c1b-8585-b83f313995c9"
     IdentityServer__Issuer: "http://auth-service"
-    UserService__ServiceUrl: "http://user-service"
+    KafkaProducer__BootstrapServers: "kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-1.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-2.kafka-controller-headless.default.svc.cluster.local:9092"
  {{- end }}
