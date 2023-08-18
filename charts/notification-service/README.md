@@ -1,2 +1,2 @@
 # Установка notification-service:
-helm repo add notification-service-repo https://nikolaybezdenezhnykh.github.io/helm-charts/ && helm install notification-service notification-service-repo/notification-service
+helm repo add nikolaybezdenezhnykh-repo https://nikolaybezdenezhnykh.github.io/helm-charts/ && helm install notification-service nikolaybezdenezhnykh-repo/notification-service

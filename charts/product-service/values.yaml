@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: nikolaybezdenezhnykh/product-service
+  pullPolicy: IfNotPresent
+  tag: "0.1"
+
+nameOverride: ""
+fullnameOverride: ""
+
+existingSecret: ""
+existingConfigMap: ""
+
+containerPort: 80
+
+updateStrategy:
+  type: RollingUpdate
+
+livenessProbe:
+  enabled: false
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  failureThreshold: 2
+  path: /health
+
+readinessProbe:
+  enabled: false
+  initialDelaySeconds: 10
+  periodSeconds: 5
+  path: /health
+
+service:
+  type: ClusterIP
+  port: 80
+  protocol: TCP
+  name: api
+
+metrics:
+  enabled: false

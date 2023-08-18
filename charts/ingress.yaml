@@ -29,6 +29,13 @@ spec:
                 name: order-service
                 port:
                   number: 80
+          - path : /api/v1.0/product
+            pathType: Prefix
+            backend:
+              service:
+                name: product-service
+                port:
+                  number: 80
           - path : /.well-known/jwks
             pathType: Prefix
             backend:
