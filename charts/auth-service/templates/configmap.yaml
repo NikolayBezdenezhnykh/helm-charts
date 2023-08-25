@@ -4,8 +4,12 @@ kind: ConfigMap
 metadata:
     name:  {{ include "auth-service.fullname" . }}
 data:
-    IdentityServer__ClientId: "otus_client"
-    IdentityServer__ClientSecret: "999d4ea0-164f-4c1b-8585-b83f313995c9"
+    IdentityServer__KnownClients__ui_client: "999d4ea0-164f-4c1b-8585-b83f313995c9"
+    IdentityServer__KnownClients__user_service: "1448b250-10b8-4d75-a838-5449342e1894"
+    IdentityServer__KnownClients__order_service: "dbf80ad4-f32a-4321-9d00-4fd229ea6aac"
+    IdentityServer__KnownClients__stock_service: "728b30fd-5f30-45cc-a8b3-320545d2929b"
+    IdentityServer__KnownClients__delivery_service: "4758ca16-9b32-44fd-a5f9-0ceffae58d76"
+    IdentityServer__KnownClients__payment_service: "ef6f2d75-8dc4-4385-9824-203c25020395"
     IdentityServer__Issuer: "http://auth-service"
     KafkaProducer__BootstrapServers: "kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-1.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-2.kafka-controller-headless.default.svc.cluster.local:9092"
  {{- end }}

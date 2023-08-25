@@ -1,0 +1,16 @@
+{{- $service := .Values.service | default dict -}}
+apiVersion: v1
+kind: Service
+metadata: 
+  name: {{ include "payment-service.fullname" . }}
+  labels: 
+    app: {{ include "payment-service.name" . }}
+spec:
+  selector: 
+    app: {{ include "payment-service.name" . }}
+  ports:
+    - protocol: {{ $service.protocol }}
+      port: {{ $service.port }}
+      targetPort: {{ .Values.containerPort }}
+      name: {{ $service.name }}
+  type: {{ $service.type }}

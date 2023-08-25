@@ -36,6 +36,34 @@ spec:
                 name: product-service
                 port:
                   number: 80
+          - path : /api/v1.0/stock
+            pathType: Prefix
+            backend:
+              service:
+                name: stock-service
+                port:
+                  number: 80
+          - path : /api/v1.0/delivery
+            pathType: Prefix
+            backend:
+              service:
+                name: delivery-service
+                port:
+                  number: 80
+          - path : /api/v1.0/payment
+            pathType: Prefix
+            backend:
+              service:
+                name: payment-service
+                port:
+                  number: 80
+          - path : /payment
+            pathType: Prefix
+            backend:
+              service:
+                name: payment-service
+                port:
+                  number: 80
           - path : /.well-known/jwks
             pathType: Prefix
             backend:

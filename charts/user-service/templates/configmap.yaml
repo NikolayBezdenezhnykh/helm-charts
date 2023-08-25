@@ -5,6 +5,6 @@ metadata:
     name:  {{ include "user-service.fullname" . }}
 data:
     IdentityServerClient__Authority: "http://auth-service"
-    IdentityServerClient__Audience: "otus"
+    IdentityServerClient__Audience: "user-service"
     KafkaConsumer__BootstrapServers: "kafka.default.svc.cluster.local:9092"
  {{- end }}

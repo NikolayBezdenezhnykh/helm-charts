@@ -4,4 +4,15 @@ kind: ConfigMap
 metadata:
     name:  {{ include "order-service.fullname" . }}
 data:
+    IdentityServerClient__Authority: "http://auth-service"
+    IdentityServerClient__Audience: "order-service"
+    AuthCredential__ClientSecret: dbf80ad4-f32a-4321-9d00-4fd229ea6aac
+    KafkaConsumer__BootstrapServers: "kafka.default.svc.cluster.local:9092"
+    KafkaProducer__BootstrapServers: "kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-1.kafka-controller-headless.default.svc.cluster.local:9092,kafka-controller-2.kafka-controller-headless.default.svc.cluster.local:9092"
+    AuthServiceUrl: "http://auth-service"
+    DeliveryServiceUrl: "http://delivery-service"
+    StockServiceUrl: "http://stock-service"
+    PaymentServiceUrl: "http://payment-service"
+    ProductServiceUrl: "http://product-service"
+    UserServiceUrl: "http://user-service"
  {{- end }}

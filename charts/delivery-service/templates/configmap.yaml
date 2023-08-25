@@ -1,0 +1,9 @@
+{{- if (include "delivery-service.createConfigMap" .) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name:  {{ include "delivery-service.fullname" . }}
+data:
+    IdentityServerClient__Authority: "http://auth-service"
+    IdentityServerClient__Audience: "delivery-service"
+ {{- end }}

@@ -1,0 +1,18 @@
+{{- if .Values.metrics.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+    name: {{ include "delivery-service.fullname" . }}
+spec: 
+    endpoints:
+        - port: {{ .Values.service.name }}
+          scrapeTimeout: 30s
+          path: /metrics
+          scheme: http
+    namespaceSelector:
+        matchNames:
+            - default
+    selector: 
+        matchLabels: 
+            app: {{ include "delivery-service.name" . }}
+{{- end }}

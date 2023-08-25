@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: nikolaybezdenezhnykh/order-service
+  repository: nikolaybezdenezhnykh/payment-service
   pullPolicy: IfNotPresent
-  tag: "0.2"
+  tag: "0.1"
 
 nameOverride: ""
 fullnameOverride: ""
@@ -43,5 +43,5 @@ ingress:
   ingressClassName: nginx
   hostname: arch.homework
   extraPaths: []
-  path: /api/v1.0/order/
+  path: /api/v1.0/payment/
   pathType: Prefix
